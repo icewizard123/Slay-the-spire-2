@@ -1,0 +1,15 @@
+card_id,name,type,rarity,cost,target,base_effect,upgrade,design_role
+EX_STRIKE,Precise Strike,Attack,Basic,1,Enemy,Deal 6 damage,Deal 9 damage,Starter attack
+EX_DEFEND,Guarded Posture,Skill,Basic,1,Self,Gain 5 Block,Gain 8 Block,Starter defense
+TACTICAL_BRIEFING,Tactical Briefing,Skill,Basic,1,Self,Gain 2 Influence; draw 1,Gain 3 Influence; draw 1,Starter setup
+COMPEL,Compel,Order,Basic,1,Enemy,Enemy deals 25% less attack damage next turn; spend up to 2 Influence for +5% each,Costs 0,Starter control
+CHAIN_OF_COMMAND,Chain of Command,Skill,Common,1,Self,If you played an Order this turn gain 8 Block else gain 1 Influence,Gain 11 Block,Order payoff
+FEINT_RETREAT,Feint Retreat,Skill,Common,1,Self,Gain 6 Block; next Attack this turn deals +4 damage,Gain 8 Block and +6 damage,Tempo stabilizer
+TARGET_EXPOSURE,Target Exposure,Skill,Common,1,Enemy,Apply 1 Vulnerable; if Influence >= 4 apply 2,Apply +1 Vulnerable,Scaling debuff
+CUT_SUPPLY_LINES,Cut Supply Lines,Attack,Common,1,Enemy,Deal 7 damage; if enemy is debuffed gain 1 Influence,Deal 10 damage,Efficient attack
+DISSIDENT_NETWORK,Dissident Network,Power,Uncommon,1,Self,At end of turn if you played 2+ Skills gain 1 Influence,Also draw 1 first trigger each combat,Engine enabler
+BLACK_ORDER,Black Order,Order,Uncommon,1,Enemy,Spend 3 Influence: apply Weak 2 and deal 8 damage,Deal 12 damage or spend 2 Influence,Midgame control burst
+MASKED_ADVANCE,Masked Advance,Attack,Uncommon,2,Enemy,Deal 14 damage; if you played an Order this turn deal +6,Deal 18 (+8 with Order),Payoff attack
+REBEL_HEART,Rebel Heart,Power,Rare,2,Self,Enter Rebellion; Orders gain +30% potency; lose 2 HP end of turn,Orders gain +40% potency,Build-defining risk/reward
+ZERO_HOUR,Zero Hour,Skill,Rare,2,All Enemies,Spend all Influence: apply that much Weak and deal 2x spent damage to all,Deal 3x spent damage,Finisher/control closer
+ABSOLUTE_COMMAND,Absolute Command,Order,Rare,3,Enemy,Enemy skips its next intent; set Influence to 0,Cost 2,High-impact emergency button

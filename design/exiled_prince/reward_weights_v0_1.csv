@@ -1,0 +1,11 @@
+category,subtype,weight,notes
+CardReward,Common,60,Keep early pools consistent
+CardReward,Uncommon,32,Mid-frequency archetype builders
+CardReward,Rare,8,Rare spikes stay rare
+ExiledPrinceCardTag,Order,22,Sufficient density to support archetype
+ExiledPrinceCardTag,InfluenceGenerator,18,Avoid resource starvation
+ExiledPrinceCardTag,RebellionSynergy,10,Keep high-risk package optional
+RelicReward,Common,65,Most drops are low-impact stabilizers
+RelicReward,Uncommon,27,Build-defining but not run-warping
+RelicReward,Rare,8,High-variance payoff relics
+ShopPool,OrderCards,25,Allow targeted strategy pivoting

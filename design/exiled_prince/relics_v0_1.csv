@@ -1,0 +1,5 @@
+relic_id,name,rarity,effect,notes
+BLACK_SEAL,Black Seal,Starter,At combat start gain 1 Influence. First Order each combat costs 1 less Influence,Defines character baseline loop
+MASK_OF_RESOLVE,Mask of Resolve,Common,Whenever you lose HP from Rebellion gain 4 Block,Offsets stance drawback
+INSURGENT_BADGE,Insurgent Badge,Uncommon,First time each turn you gain Influence gain 1 additional Influence,Smooth scaling
+CHESSMASTER_GAMBIT,Chessmaster Gambit,Rare,At turn start if Influence is 0 gain 2 Energy then lose 6 HP,Explosive but risky

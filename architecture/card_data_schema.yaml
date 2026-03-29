@@ -1,0 +1,51 @@
+version: 1
+schema: card_definition
+required:
+  - id
+  - name_key
+  - type
+  - rarity
+  - cost
+  - target
+  - opcodes
+fields:
+  id: string
+  name_key: string
+  desc_key: string
+  type: [Attack, Skill, Power, Order]
+  rarity: [Basic, Common, Uncommon, Rare]
+  cost: int
+  target: [Self, Enemy, AllEnemies, None]
+  tags: [string]
+  numbers:
+    damage: int
+    block: int
+    magic: int
+  opcodes:
+    - op: string
+      args: map
+  upgrade:
+    cost_delta: int
+    number_deltas: map
+    opcode_overrides: list
+
+example:
+  id: EX_CARD_COMPEL
+  name_key: card.ex_compel.name
+  desc_key: card.ex_compel.desc
+  type: Order
+  rarity: Basic
+  cost: 1
+  target: Enemy
+  tags: [control, order]
+  numbers:
+    magic: 25
+  opcodes:
+    - op: APPLY_INTENT_DAMAGE_MULT
+      args: { target: enemy, percent_reduction: 25, duration_turns: 1 }
+    - op: SPEND_RESOURCE_OPTIONAL
+      args: { resource: influence, max_spend: 2, per_spend_bonus: 5 }
+  upgrade:
+    cost_delta: -1
+    number_deltas: { magic: 0 }
+    opcode_overrides: []

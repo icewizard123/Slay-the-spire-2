@@ -1,0 +1,51 @@
+{
+  "WEAK": {
+    "name": "Weak",
+    "short": "Deal reduced attack damage.",
+    "tooltip": "Weak reduces attack damage dealt by the affected unit for its duration.",
+    "stacking": "Additive duration stacks",
+    "tags": ["debuff", "combat_core"]
+  },
+  "VULNERABLE": {
+    "name": "Vulnerable",
+    "short": "Take increased attack damage.",
+    "tooltip": "Vulnerable increases attack damage taken by the affected unit for its duration.",
+    "stacking": "Additive duration stacks",
+    "tags": ["debuff", "combat_core"]
+  },
+  "EXHAUST": {
+    "name": "Exhaust",
+    "short": "Removed for this combat.",
+    "tooltip": "When a card Exhausts, it is removed from your deck cycle for the current combat.",
+    "stacking": "N/A",
+    "tags": ["zone_change", "card_core"]
+  },
+  "BLOCK": {
+    "name": "Block",
+    "short": "Prevents incoming damage.",
+    "tooltip": "Block prevents incoming damage this turn unless stated otherwise.",
+    "stacking": "Numeric value stacks",
+    "tags": ["defense", "combat_core"]
+  },
+  "EX_KEYWORD_ORDER": {
+    "name": "Order",
+    "short": "Tactical command card type.",
+    "tooltip": "Order cards manipulate enemy behavior and often scale using Influence.",
+    "stacking": "N/A",
+    "tags": ["exiled_prince", "archetype"]
+  },
+  "EX_KEYWORD_INFLUENCE": {
+    "name": "Influence",
+    "short": "Secondary tactical resource.",
+    "tooltip": "Influence ranges from 0 to 10 and is spent on command effects.",
+    "stacking": "Clamp 0..10",
+    "tags": ["exiled_prince", "resource"]
+  },
+  "EX_KEYWORD_REBELLION": {
+    "name": "Rebellion",
+    "short": "High-risk command state.",
+    "tooltip": "Rebellion boosts Order potency at the cost of end-of-turn HP upkeep.",
+    "stacking": "Non-stack state",
+    "tags": ["exiled_prince", "state"]
+  }
+}

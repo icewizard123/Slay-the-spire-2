@@ -1,0 +1,29 @@
+{
+  "character_id": "EXILED_PRINCE",
+  "display_name": "The Exiled Prince",
+  "max_hp": 72,
+  "starting_gold": 99,
+  "starting_relic": "BLACK_SEAL",
+  "starting_deck": [
+    "EX_STRIKE",
+    "EX_STRIKE",
+    "EX_STRIKE",
+    "EX_STRIKE",
+    "EX_DEFEND",
+    "EX_DEFEND",
+    "EX_DEFEND",
+    "EX_DEFEND",
+    "TACTICAL_BRIEFING",
+    "COMPEL"
+  ],
+  "resource": {
+    "name": "Influence",
+    "min": 0,
+    "max": 10,
+    "start_of_combat": 0
+  },
+  "notes": [
+    "Starter deck supports a low-complexity setup -> payoff loop.",
+    "First runs should verify that COMPEL does not create non-interactive enemy turns."
+  ]
+}

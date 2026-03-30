@@ -1,0 +1,38 @@
+{
+  "character": {
+    "EXILED_PRINCE": {
+      "name": "The Exiled Prince",
+      "select_text": "A strategist who wins by command, setup, and sacrifice."
+    }
+  },
+  "cards": {
+    "EX_STRIKE": {
+      "name": "Precise Strike",
+      "description": "Deal !D! damage."
+    },
+    "EX_DEFEND": {
+      "name": "Guarded Posture",
+      "description": "Gain !B! Block."
+    },
+    "TACTICAL_BRIEFING": {
+      "name": "Tactical Briefing",
+      "description": "Gain !M! Influence. Draw 1 card."
+    },
+    "COMPEL": {
+      "name": "Compel",
+      "description": "Enemy deals reduced attack damage next turn. Can spend Influence to increase reduction."
+    }
+  },
+  "relics": {
+    "BLACK_SEAL": {
+      "name": "Black Seal",
+      "flavor": "A vow to command fate itself.",
+      "description": "At combat start, gain 1 Influence. Your first Order each combat costs 1 less Influence."
+    }
+  },
+  "keywords": {
+    "Order": "A tactical command card type.",
+    "Influence": "A secondary resource used for command effects.",
+    "Rebellion": "A high-risk state that boosts Orders with upkeep penalties."
+  }
+}

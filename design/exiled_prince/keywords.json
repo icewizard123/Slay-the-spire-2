@@ -1,0 +1,14 @@
+{
+  "Order": {
+    "name": "Order",
+    "description": "A tactical command card type. Many effects scale with your current Influence."
+  },
+  "Influence": {
+    "name": "Influence",
+    "description": "A secondary resource (0-10). Gain from setup cards, spend on powerful commands."
+  },
+  "Rebellion": {
+    "name": "Rebellion",
+    "description": "A volatile state that amplifies Orders but causes upkeep penalties each turn."
+  }
+}

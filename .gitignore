@@ -1,3 +1,5 @@
 build_artifacts/*.dll
 build_artifacts/*.pck
 build_artifacts/checksums.sha256
+__pycache__/
+*.pyc

@@ -1,46 +1,43 @@
-# Exiled Prince (Slay the Spire 2 Mod Concept)
+# Slay-the-spire-2
 
-This repository currently contains design, architecture, and release-process artifacts for the **Exiled Prince** custom character project.
+## Exiled Prince bootstrap
 
-> Current state: not yet playable. See `READINESS_REPORT.md` for implementation blockers and release gate criteria.
+This repository now includes a runtime bootstrap for the Exiled Prince character using stable IDs from `design/exiled_prince/id_conventions.md`.
 
-## Install (for packaged release builds)
+### What is wired
+- Character registration under `EX_CHAR_EXILED_PRINCE`.
+- Select-screen metadata (name/title/flavor + placeholder art references).
+- Starter loadout from `design/exiled_prince/starter_kit.json`:
+  - Gold: `99`
+  - Relic: `EX_RELIC_BLACK_SEAL`
+  - Deck (exact order):
+    - `EX_CARD_EX_STRIKE` ×4
+    - `EX_CARD_EX_DEFEND` ×4
+    - `EX_CARD_TACTICAL_BRIEFING` ×1
+    - `EX_CARD_COMPEL` ×1
 
-When release artifacts are published to Steam Workshop and Nexus Mods:
+### Run with Exiled Prince enabled
+From repository root:
 
-1. Download/subscribe to the release matching your game build.
-2. Verify dependency and load-order notes from the release page.
-3. Launch the game and confirm the mod appears in the mod list (if applicable).
-4. Start a **new run** after install for the safest compatibility behavior.
+```bash
+python -m runtime.exiled_prince_bootstrap
+```
 
-## Uninstall
+Expected output:
 
-1. Exit the game completely.
-2. Unsubscribe/remove the mod package from Steam Workshop or Nexus Mods.
-3. Remove any local override files created for manual installs (if used).
-4. Relaunch the game.
+```text
+Registered characters: EX_CHAR_EXILED_PRINCE
+```
 
-### Save safety warning
+### Validation commands
+```bash
+pytest -q
+```
 
-- Removing the mod during an **active run** can invalidate that run.
-- Existing profile saves are expected to remain safe unless a release is explicitly marked as breaking.
-- Always check the release notes compatibility statement before installing/removing mid-campaign.
+The tests validate registration, select-screen metadata presence, and starter deck/relic parity with the starter kit.
 
-## Compatibility Notes
+### Placeholder art
+Art is intentionally non-copyrighted placeholders at:
+- `assets/placeholders/exiled_prince_art_refs.json`
 
-- **Active run compatibility:** Must be declared in each release note.
-- **Existing save-file compatibility:** Must be declared in each release note.
-- If a release is breaking, it is labeled `BREAKING SAVE CHANGE` and includes rollback guidance.
-
-See:
-- `policy/save_compatibility_policy.md`
-- `release/release_notes_template.md`
-- `release/pre_release_checklist.md`
-
-## Reporting issues
-
-Include:
-- Release version
-- Platform/store source (Steam/Nexus/manual)
-- Reproduction steps
-- Log/crash file location and excerpt
+Replace these refs with licensed/original assets before shipping.

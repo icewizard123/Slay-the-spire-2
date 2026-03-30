@@ -1,0 +1,302 @@
+{
+  "version": "v0.1-first10",
+  "resource": "influence",
+  "cards": [
+    {
+      "id": "EX_STRIKE",
+      "name_key": "cards.EX_STRIKE.name",
+      "description_key": "cards.EX_STRIKE.description",
+      "type": "Attack",
+      "rarity": "Basic",
+      "cost": 1,
+      "target": "Enemy",
+      "tags": ["starter", "attack"],
+      "numbers": { "damage": 6 },
+      "opcodes": [
+        { "op": "DEAL_DAMAGE", "args": { "target": "enemy", "amount_ref": "damage" } }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "damage": 3 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["BLOCK"]
+    },
+    {
+      "id": "EX_DEFEND",
+      "name_key": "cards.EX_DEFEND.name",
+      "description_key": "cards.EX_DEFEND.description",
+      "type": "Skill",
+      "rarity": "Basic",
+      "cost": 1,
+      "target": "Self",
+      "tags": ["starter", "defense"],
+      "numbers": { "block": 5 },
+      "opcodes": [
+        { "op": "GAIN_BLOCK", "args": { "target": "self", "amount_ref": "block" } }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "block": 3 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["BLOCK"]
+    },
+    {
+      "id": "TACTICAL_BRIEFING",
+      "name_key": "cards.TACTICAL_BRIEFING.name",
+      "description_key": "cards.TACTICAL_BRIEFING.description",
+      "type": "Skill",
+      "rarity": "Basic",
+      "cost": 1,
+      "target": "Self",
+      "tags": ["starter", "resource"],
+      "numbers": { "magic": 2, "draw": 1 },
+      "opcodes": [
+        { "op": "GAIN_RESOURCE", "args": { "resource": "influence", "amount_ref": "magic" } },
+        { "op": "DRAW", "args": { "amount_ref": "draw" } }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "magic": 1 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["EX_KEYWORD_INFLUENCE"]
+    },
+    {
+      "id": "COMPEL",
+      "name_key": "cards.COMPEL.name",
+      "description_key": "cards.COMPEL.description",
+      "type": "Order",
+      "rarity": "Basic",
+      "cost": 1,
+      "target": "Enemy",
+      "tags": ["starter", "order", "control"],
+      "numbers": { "reduction_percent": 25, "max_spend": 2, "bonus_percent_per_spend": 5 },
+      "opcodes": [
+        {
+          "op": "APPLY_DEBUFF",
+          "args": {
+            "target": "enemy",
+            "debuff": "INTENT_DAMAGE_REDUCTION",
+            "duration_turns": 1,
+            "base_percent_ref": "reduction_percent"
+          }
+        },
+        {
+          "op": "SPEND_RESOURCE",
+          "args": {
+            "resource": "influence",
+            "optional": true,
+            "max_spend_ref": "max_spend",
+            "on_spend": {
+              "op": "MODIFY_LAST_APPLIED_DEBUFF",
+              "args": { "field": "percent", "add_per_spend_ref": "bonus_percent_per_spend" }
+            }
+          }
+        }
+      ],
+      "upgrade": {
+        "cost_delta": -1,
+        "number_deltas": {},
+        "opcode_overrides": []
+      },
+      "tooltips": ["EX_KEYWORD_ORDER", "EX_KEYWORD_INFLUENCE", "WEAK"]
+    },
+    {
+      "id": "CHAIN_OF_COMMAND",
+      "name_key": "cards.CHAIN_OF_COMMAND.name",
+      "description_key": "cards.CHAIN_OF_COMMAND.description",
+      "type": "Skill",
+      "rarity": "Common",
+      "cost": 1,
+      "target": "Self",
+      "tags": ["order_payoff", "defense"],
+      "numbers": { "block": 8, "influence": 1 },
+      "opcodes": [
+        {
+          "op": "CONDITIONAL",
+          "args": {
+            "if": "played_order_this_turn",
+            "then": [{ "op": "GAIN_BLOCK", "args": { "target": "self", "amount_ref": "block" } }],
+            "else": [{ "op": "GAIN_RESOURCE", "args": { "resource": "influence", "amount_ref": "influence" } }]
+          }
+        }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "block": 3 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["EX_KEYWORD_ORDER", "BLOCK", "EX_KEYWORD_INFLUENCE"]
+    },
+    {
+      "id": "FEINT_RETREAT",
+      "name_key": "cards.FEINT_RETREAT.name",
+      "description_key": "cards.FEINT_RETREAT.description",
+      "type": "Skill",
+      "rarity": "Common",
+      "cost": 1,
+      "target": "Self",
+      "tags": ["tempo", "defense", "attack_buff"],
+      "numbers": { "block": 6, "next_attack_bonus": 4 },
+      "opcodes": [
+        { "op": "GAIN_BLOCK", "args": { "target": "self", "amount_ref": "block" } },
+        {
+          "op": "APPLY_BUFF",
+          "args": {
+            "target": "self",
+            "buff": "NEXT_ATTACK_DAMAGE_BONUS",
+            "value_ref": "next_attack_bonus",
+            "expires": "on_next_attack_this_turn"
+          }
+        }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "block": 2, "next_attack_bonus": 2 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["BLOCK"]
+    },
+    {
+      "id": "TARGET_EXPOSURE",
+      "name_key": "cards.TARGET_EXPOSURE.name",
+      "description_key": "cards.TARGET_EXPOSURE.description",
+      "type": "Skill",
+      "rarity": "Common",
+      "cost": 1,
+      "target": "Enemy",
+      "tags": ["debuff", "scaling"],
+      "numbers": { "vulnerable_base": 1, "vulnerable_threshold": 4, "vulnerable_high": 2 },
+      "opcodes": [
+        {
+          "op": "CONDITIONAL",
+          "args": {
+            "if": "resource_at_least:influence:vulnerable_threshold",
+            "then": [
+              {
+                "op": "APPLY_DEBUFF",
+                "args": { "target": "enemy", "debuff": "VULNERABLE", "stacks_ref": "vulnerable_high" }
+              }
+            ],
+            "else": [
+              {
+                "op": "APPLY_DEBUFF",
+                "args": { "target": "enemy", "debuff": "VULNERABLE", "stacks_ref": "vulnerable_base" }
+              }
+            ]
+          }
+        }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "vulnerable_base": 1, "vulnerable_high": 1 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["VULNERABLE", "EX_KEYWORD_INFLUENCE"]
+    },
+    {
+      "id": "CUT_SUPPLY_LINES",
+      "name_key": "cards.CUT_SUPPLY_LINES.name",
+      "description_key": "cards.CUT_SUPPLY_LINES.description",
+      "type": "Attack",
+      "rarity": "Common",
+      "cost": 1,
+      "target": "Enemy",
+      "tags": ["attack", "resource_gain"],
+      "numbers": { "damage": 7, "influence": 1 },
+      "opcodes": [
+        { "op": "DEAL_DAMAGE", "args": { "target": "enemy", "amount_ref": "damage" } },
+        {
+          "op": "CONDITIONAL",
+          "args": {
+            "if": "target_has_debuff",
+            "then": [
+              { "op": "GAIN_RESOURCE", "args": { "resource": "influence", "amount_ref": "influence" } }
+            ],
+            "else": []
+          }
+        }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "damage": 3 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["EX_KEYWORD_INFLUENCE"]
+    },
+    {
+      "id": "DISSIDENT_NETWORK",
+      "name_key": "cards.DISSIDENT_NETWORK.name",
+      "description_key": "cards.DISSIDENT_NETWORK.description",
+      "type": "Power",
+      "rarity": "Uncommon",
+      "cost": 1,
+      "target": "Self",
+      "tags": ["engine", "power", "resource"],
+      "numbers": { "skills_threshold": 2, "influence": 1, "draw_first_trigger": 1 },
+      "opcodes": [
+        {
+          "op": "APPLY_BUFF",
+          "args": {
+            "target": "self",
+            "buff": "END_TURN_SKILL_THRESHOLD_GAIN_RESOURCE",
+            "threshold_ref": "skills_threshold",
+            "resource": "influence",
+            "amount_ref": "influence"
+          }
+        }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": {},
+        "opcode_overrides": [
+          {
+            "op": "APPLY_BUFF",
+            "args": {
+              "target": "self",
+              "buff": "END_TURN_SKILL_THRESHOLD_GAIN_RESOURCE",
+              "threshold_ref": "skills_threshold",
+              "resource": "influence",
+              "amount_ref": "influence",
+              "first_trigger_bonus": { "op": "DRAW", "args": { "amount_ref": "draw_first_trigger" } }
+            }
+          }
+        ]
+      },
+      "tooltips": ["EX_KEYWORD_INFLUENCE"]
+    },
+    {
+      "id": "BLACK_ORDER",
+      "name_key": "cards.BLACK_ORDER.name",
+      "description_key": "cards.BLACK_ORDER.description",
+      "type": "Order",
+      "rarity": "Uncommon",
+      "cost": 1,
+      "target": "Enemy",
+      "tags": ["order", "control", "burst"],
+      "numbers": { "influence_cost": 3, "weak": 2, "damage": 8 },
+      "opcodes": [
+        {
+          "op": "SPEND_RESOURCE",
+          "args": {
+            "resource": "influence",
+            "amount_ref": "influence_cost",
+            "required": true,
+            "on_success": [
+              { "op": "APPLY_DEBUFF", "args": { "target": "enemy", "debuff": "WEAK", "stacks_ref": "weak" } },
+              { "op": "DEAL_DAMAGE", "args": { "target": "enemy", "amount_ref": "damage" } }
+            ]
+          }
+        }
+      ],
+      "upgrade": {
+        "cost_delta": 0,
+        "number_deltas": { "damage": 4, "influence_cost": -1 },
+        "opcode_overrides": []
+      },
+      "tooltips": ["EX_KEYWORD_ORDER", "EX_KEYWORD_INFLUENCE", "WEAK"]
+    }
+  ]
+}

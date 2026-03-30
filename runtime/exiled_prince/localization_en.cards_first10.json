@@ -1,0 +1,48 @@
+{
+  "cards": {
+    "EX_STRIKE": {
+      "name": "Precise Strike",
+      "description": "Deal !damage! damage."
+    },
+    "EX_DEFEND": {
+      "name": "Guarded Posture",
+      "description": "Gain !block! Block."
+    },
+    "TACTICAL_BRIEFING": {
+      "name": "Tactical Briefing",
+      "description": "Gain !magic! Influence. Draw 1 card."
+    },
+    "COMPEL": {
+      "name": "Compel",
+      "description": "Enemy deals !reduction_percent!% less attack damage next turn. Spend up to !max_spend! Influence for +!bonus_percent_per_spend!% each."
+    },
+    "CHAIN_OF_COMMAND": {
+      "name": "Chain of Command",
+      "description": "If you played an Order this turn, gain !block! Block. Otherwise gain !influence! Influence."
+    },
+    "FEINT_RETREAT": {
+      "name": "Feint Retreat",
+      "description": "Gain !block! Block. Your next Attack this turn deals +!next_attack_bonus! damage."
+    },
+    "TARGET_EXPOSURE": {
+      "name": "Target Exposure",
+      "description": "Apply !vulnerable_base! Vulnerable. If Influence ≥ !vulnerable_threshold!, apply !vulnerable_high! instead."
+    },
+    "CUT_SUPPLY_LINES": {
+      "name": "Cut Supply Lines",
+      "description": "Deal !damage! damage. If enemy is debuffed, gain !influence! Influence."
+    },
+    "DISSIDENT_NETWORK": {
+      "name": "Dissident Network",
+      "description": "At end of turn, if you played !skills_threshold!+ Skills, gain !influence! Influence."
+    },
+    "BLACK_ORDER": {
+      "name": "Black Order",
+      "description": "Spend !influence_cost! Influence: apply !weak! Weak and deal !damage! damage."
+    },
+    "DISSIDENT_NETWORK+": {
+      "name": "Dissident Network+",
+      "description": "At end of turn, if you played !skills_threshold!+ Skills, gain !influence! Influence. First trigger each combat: draw !draw_first_trigger! card."
+    }
+  }
+}

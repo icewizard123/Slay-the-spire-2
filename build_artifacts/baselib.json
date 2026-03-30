@@ -1,0 +1,13 @@
+{
+  "id": "baselib",
+  "type": "library",
+  "version": "0.1.0-alpha",
+  "build_date": "2026-03-30",
+  "binary": "baselib.dll",
+  "api_level": 1,
+  "entry_points": [
+    "baselib_name",
+    "baselib_version",
+    "baselib_api_level"
+  ]
+}

@@ -1,0 +1,4 @@
+event_id,name,act,choices,design_goal
+EX_COUNCIL_RIFT,Council Rift,Any,"Concede (+max HP, lose relic) / Defy (elite fight, rare reward)",High-stakes political decision
+EX_MASKED_CONTACT,Masked Contact,Any,"Accept intel (add uncommon Order) / Decline (gold)",Supports Order archetype
+EX_FALSE_TRUCE,False Truce,Any,"Trust (heal, gain curse) / Suspect (take damage, remove card)",Risk-reward narrative tension

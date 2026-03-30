@@ -1,0 +1,6 @@
+status_id,name,type,stacking_rule,decay_timing,source_examples,balance_guardrail
+EX_POWER_INFLUENCE,Influence,Resource,Clamp 0..10,None,TACTICAL_BRIEFING; DISSIDENT_NETWORK,Hard cap prevents runaway scaling
+EX_POWER_REBELLION,Rebellion,State,Non-stack; refresh duration if re-applied,End of player turn upkeep,REBEL_HEART,Lose 2 HP per turn baseline
+EX_DEBUFF_COMPELLED,Compelled,Debuff,Highest reduction only,After enemy next attack,COMPEL; ABSOLUTE_COMMAND,Cannot reduce below minimum intent floor
+EX_BUFF_ORDER_BONUS,Order Potency,Buff,Additive % bonus,End of combat,REBEL_HEART,Cap bonus at +50% total
+EX_DEBUFF_EXPOSED,Exposed,Debuff,Standard stacks,End of target turn,TARGET_EXPOSURE,Cap vulnerability amplification interactions

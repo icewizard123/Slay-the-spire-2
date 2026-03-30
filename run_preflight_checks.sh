@@ -11,6 +11,5 @@ fi
 
 echo "ERROR: scripts/run_preflight_checks.sh not found."
 echo "Make sure you are in the repository root (Slay-the-spire-2)."
-echo "Current directory: $(pwd)"
-echo "Tip (Codespaces): cd /workspaces/Slay-the-spire-2 && bash run_preflight_checks.sh"
+echo "Try: cd /workspace/Slay-the-spire-2 && bash run_preflight_checks.sh"
 exit 1

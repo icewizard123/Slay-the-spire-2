@@ -5,3 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 for candidate in (ROOT / "src", ROOT):
     if candidate.exists() and str(candidate) not in sys.path:
         sys.path.insert(0, str(candidate))
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+if str(ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(ROOT / "src"))

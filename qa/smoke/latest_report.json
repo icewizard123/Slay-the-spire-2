@@ -1,0 +1,50 @@
+[
+  {
+    "scenario": "character_boot",
+    "seed": 71001,
+    "passed": true,
+    "details": "Boot data integrity validated"
+  },
+  {
+    "scenario": "starter_combat",
+    "seed": 71005,
+    "passed": true,
+    "details": "Starter combat survival proxy met: 7/10"
+  },
+  {
+    "scenario": "first_10_cards",
+    "seed": 71002,
+    "passed": true,
+    "details": "Starter 10 cards resolved and validated"
+  },
+  {
+    "scenario": "influence_clamp",
+    "seed": 71004,
+    "passed": true,
+    "details": "Influence stayed clamped [0,10] across stress runs"
+  },
+  {
+    "scenario": "rebellion_upkeep",
+    "seed": 71006,
+    "passed": true,
+    "details": "Rebellion upkeep meaningful (20 HP) and non-lethal over 10 turns"
+  },
+  {
+    "scenario": "BLACK_SEAL_behavior",
+    "seed": 71003,
+    "passed": true,
+    "details": "Black Seal start gain + one-time Order discount validated"
+  },
+  {
+    "scenario": "save_load_roundtrip",
+    "seed": 71007,
+    "passed": true,
+    "details": "Save/load roundtrip preserved Influence + Rebellion + seed"
+  },
+  {
+    "scenario": "matrix_alignment",
+    "seed": 71008,
+    "passed": true,
+    "details": "Smoke scenarios aligned to playtest matrix criteria"
+  }
+]

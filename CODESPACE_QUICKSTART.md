@@ -1,5 +1,9 @@
 # Codespace Quickstart (Copy/Paste)
 
+Use this in GitHub Codespaces:
+
+```bash
+cd /workspaces/Slay-the-spire-2
 If you are not in the repo yet:
 
 ```bash
@@ -15,6 +19,7 @@ bash run_preflight_checks.sh
 Alternative direct script path:
 
 ```bash
+cd /workspaces/Slay-the-spire-2
 bash scripts/run_preflight_checks.sh
 ```
 
@@ -25,4 +30,5 @@ pwd
 ls
 ```
 
+and confirm you are inside `.../Slay-the-spire-2`.
 and confirm you are inside `Slay-the-spire-2`.
